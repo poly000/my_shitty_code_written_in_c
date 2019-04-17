@@ -9,7 +9,7 @@ b:
 		x+=2;
 		goto a;
 	}
-	i++;
+	i+=2;
 	if(i<x/2)
 		goto b;
 c:
