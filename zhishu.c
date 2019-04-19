@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(){
 	register unsigned long x=3,i,n=2,amount=2;
-	printf("         2         3");
+	printf("%10d%10d",2,3);
 a:
 	i=3;
 b:
