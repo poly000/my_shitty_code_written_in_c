@@ -1,11 +1,11 @@
 #include <stdio.h>
 int main(){
-	register unsigned long x=3,i,n=1,amount=1;
-	printf("         2");
+	register unsigned long x=3,i,n=2,amount=2;
+	printf("         2         3");
 a:
 	i=3;
 b:
-	if(x/i*i==x){
+	if(x%i==0){
 		x+=2;
 		goto a;
 	}
@@ -20,7 +20,7 @@ c:
 		}else
 			printf("%10lu",x);
 	}
-	if(++amount==1000) //求得质数的量
+	if(++amount==10000) //求得质数的量
 		return 0;
 	x+=2;
 	goto a;

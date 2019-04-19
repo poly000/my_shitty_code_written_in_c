@@ -7,8 +7,8 @@ int main(){
 	yuan=(int)total;
 	fen=(int)(total*100)%10;
 	jiao=(total-yuan-fen*0.01)*10;
-	printf("\t%.2lf 合计,\n",total);
-	printf("\t\t%d元 %d角 %d分\n",yuan,jiao,fen);
+	printf("\t%.2lf Total\n",total);
+	printf("\t\t%d yuan %d jiao %d fen\n",yuan,jiao,fen);
 	return 0;
 }
 
