@@ -11,7 +11,7 @@ a:
 	x=++i*4;
 	y=(num-7*x)/4;
 	z=num-x-y;
-	printf("%6d cock(s), %6d hen(s), %6d chick(s)",x,y,z);
+	printf("%6d cock(s), %6d hen(s), %6d chick(s)\n",x,y,z);
 	if(i==n)
 		return 0;
 	else
