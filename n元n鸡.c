@@ -1,14 +1,19 @@
 #include <stdio.h>
+#define num 100
 int main(){
-	register int x,y,z,n;
-	printf("    x    y    z\n");
-	for(x=1;x<14;x++){
-		n=100-7*x;
-		if(n%4==0){
-			y=n/4;
-			z=100-x-y;
-			printf("%5d%5d%5d\n",x,y,z);
-		}
+	register int x,y,z,n,i=0;
+	if(num%4!=0||num<32){
+		printf("%d is not able",num);
+		return 1;
 	}
-	return 0;
+	n=(num/4-1)/7;
+a:
+	x=++i*4;
+	y=(num-7*x)/4;
+	z=num-x-y;
+	printf("%6d cock(s), %6d hen(s), %6d chick(s)",x,y,z);
+	if(i==n)
+		return 0;
+	else
+		goto a;
 }
