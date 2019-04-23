@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #define max 10001 /* 10001 means max true number added 1 */
-#define max_wrong 30 /* make it as you need */
+#define max_wrong_times 30 /* make it as you need */
 int main() {
-	register unsigned long max_wrong_times=max_wrong,true_num,wronged_times,guest_num;
+	register unsigned long true_num,wronged_times,guest_num;
 	unsigned long guest_num_;
 	char yesno;
 	goto b;

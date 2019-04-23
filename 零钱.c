@@ -1,6 +1,7 @@
 #include <stdio.h>
 int main(){
-	int n1,n2,n3,n4,n5,yuan,jiao,fen;
+	int n1,n2,n3,n4,n5;
+	register int yuan,jiao,fen;
 	double total;
 	scanf("%d%d%d%d%d",&n1,&n2,&n3,&n4,&n5);
 	total=0.01*n1+0.02*n2+0.05*n3+0.1*n4+0.5*n5;

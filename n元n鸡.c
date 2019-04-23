@@ -1,5 +1,6 @@
 #include <stdio.h>
 #define num 100
+ 
 int main(){
 	register int x,y,z,n,i=0;
 	if(num%4!=0||num<32){

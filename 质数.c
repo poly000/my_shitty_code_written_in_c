@@ -20,7 +20,7 @@ c:
 		}else
 			printf("%10lu",x);
 	}
-	if(++amount==10000) //求得质数的量
+	if(++amount==100)
 		return 0;
 	x+=2;
 	goto a;
