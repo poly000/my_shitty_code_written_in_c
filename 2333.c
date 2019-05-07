@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define num_x 1536
+#define num_x 1536 
 #define num_y 1024
 #define num_z 1024
 

@@ -1,22 +1,19 @@
 #include <stdio.h>
-int main(){
-	register unsigned long m,n,o;
-	unsigned long m_,n_;
-	scanf("%lu%lu",&m_,&n_);
-	m=m_;
-	n=n_;
-	if(m>n){
-		o=m;
-		m=n;
-		n=o;
-	}
-	a:
-		o=m%n;
-		if(o){
+#define num1 6
+#define num2 3
+int main() {
+#if num1<num2
+	register unsigned long m=num1,n=num2,o;
+#else
+	register unsigned long n=num1,m=num2,o;
+#endif
+a:
+	o=m%n;
+	if(o) {
 		m=n;
 		n=o;
 		goto a;
 	}
-	printf("%lu %lu",n,m_/n*n_);
+	printf("%lu %lu",n,num1/n*num2);
 	return 0;
 }

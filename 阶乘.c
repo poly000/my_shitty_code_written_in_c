@@ -1,11 +1,11 @@
 #include <stdio.h>
+#define num 34
 int main() {
-	unsigned long s,x;
-	scanf("%lu",&x);
-	if(x>33){
-		printf("TOO BIG!");
-		return 1;
-	}
+	register unsigned long s,x=num;
+#if num>33
+	puts("TOO BIG!");
+	return 1;
+#else
 	if(x<3) {
 		printf("%lu\n",x);
 		return 0;
@@ -16,4 +16,5 @@ int main() {
 	} while(x>2);
 	printf("%lu\n",s);
 	return 0;
+#endif
 }

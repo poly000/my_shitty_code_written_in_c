@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define num 100
+#define num 1000
  
 int main(){
 	register int x,y,z,n,i=0;
