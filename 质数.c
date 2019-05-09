@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define many 1024
+#define many 5000 
 unsigned long num_[many]= {2};
 int main() {
 #if many==1
@@ -7,7 +7,7 @@ int main() {
 	return 0;
 #elif many>1
 	printf("%10d",2);
-	register unsigned long i=0,num=3,j=1;
+	register unsigned long i=0,num=3,j=1,k=1;
 	do {
 		while(i<j) {
 			if(num%num_[i]==0)
@@ -17,18 +17,15 @@ int main() {
 		if(i==j) {
 			num_[i]=num;
 			j++;
+			if(++k==10) {
+				printf("%10lu\n",num_[i]);
+				k=0;
+			} else
+				printf("%10lu",num_[i]);
 		}
 		i=0;
 		num+=2;
 	} while(j<many);
-	j=1;
-	while(++i<many) {
-		if(++j==10) {
-			printf("%10lu\n",num_[i]);
-			j=0;
-		} else
-			printf("%10lu",num_[i]);
-	}
 	return 0;
 #endif
 }
