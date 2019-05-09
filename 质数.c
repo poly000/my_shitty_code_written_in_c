@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define many 5000 
+#define many 100000 
 unsigned long num_[many]= {2};
 int main() {
 #if many==1
@@ -18,10 +18,10 @@ int main() {
 			num_[i]=num;
 			j++;
 			if(++k==10) {
-				printf("%10lu\n",num_[i]);
+				printf("%10lu\n",num);
 				k=0;
 			} else
-				printf("%10lu",num_[i]);
+				printf("%10lu",num);
 		}
 		i=0;
 		num+=2;
