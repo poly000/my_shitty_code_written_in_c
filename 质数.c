@@ -1,12 +1,11 @@
 #include <stdio.h>
-#define many 2000
+#define many 1024
 unsigned long num_[many]= {2};
 int main() {
 #if many==1
 	printf("2\n");
 	return 0;
-#endif
-#if many>1
+#elif many>1
 	printf("%10d",2);
 	register unsigned long i=0,num=3,j=1;
 	do {
@@ -30,5 +29,6 @@ int main() {
 		} else
 			printf("%10lu",num_[i]);
 	}
+	return 0;
 #endif
 }

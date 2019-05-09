@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define num 34
+#define num 33
 int main() {
 	register unsigned long s,x=num;
 #if num>33

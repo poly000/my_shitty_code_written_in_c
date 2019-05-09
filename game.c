@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define max 10001 /* 10001 means max true number added 1 */
+#define max 100001 /* 10001 means max true number added 1 */
 #define max_wrong_times 30 /* make it as you need */
 int main() {
 	register unsigned long true_num,wronged_times,guest_num;
@@ -16,7 +16,7 @@ a:
 		printf("You lost...\n");
 		printf("Try again? (y)\n");
 	}
-	yesno=getchar();
+	getchar();
 	yesno=getchar();
 	if(yesno=='Y'||yesno=='y') {
 		goto b;
