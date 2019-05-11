@@ -8,6 +8,7 @@ int main() {
 			printf("ERROR: WRONG VALUE\n");
 			return 1;
 		}
+	i=0;
 a:
 	iDoubleNum=1;
 	iTemp2=iNum[i];
