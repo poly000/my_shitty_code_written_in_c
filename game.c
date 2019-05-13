@@ -4,7 +4,8 @@
 #define max 100001 /* 10001 means max true number added 1 */
 #define max_wrong_times 30 /* make it as you need */
 int main() {
-	register unsigned long true_num,wronged_times,guest_num;
+	register unsigned long true_num,wronged_times;
+	unsigned long guest_num;
 	char yesno;
 	goto b;
 a:
@@ -28,7 +29,7 @@ b:
 	wronged_times=0;
 c:
 	printf("Please type a number: ");
-	scanf("%lu",guest_num);
+	scanf("%lu",&guest_num);
 	if(guest_num==true_num) {
 		goto a;
 	} else {
