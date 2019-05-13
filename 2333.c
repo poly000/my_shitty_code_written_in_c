@@ -1,11 +1,11 @@
 #include <stdio.h>
-#define num_x 1536 
+#define num_x 1024 
 #define num_y 1024
 #define num_z 1024
 
 char a[num_x][num_y][num_z];
 int main() {
-	int x=0,y=0,z=0;
+	register int x=0,y=0,z=0;
 a:
 	a[x][y][z++]='2';
 	a[x][y][z++]='3';

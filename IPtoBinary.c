@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 int main() {
-	int iNum[4],*iTemp,*iBinary;
-	register int i=0,iTailNum,iDoubleNum,iTemp2,j,k;
+	int iNum[4];
+	register int *iTemp,*iBinary,i=0,iTailNum,iDoubleNum,iTemp2,j,k;
+	printf("Please type a IP address: ");
 	scanf("%i.%i.%i.%i",iNum,&iNum[1],&iNum[2],&iNum[3]);
 	for (; i<4; i++)
 		if (iNum[i]>255||iNum[i]<0) {
@@ -10,6 +11,7 @@ int main() {
 			return 1;
 		}
 	i=0;
+	printf("\nBinary:\n");
 a:
 	iTemp=malloc(129*sizeof(int));
 	if(iTemp==0)

@@ -1,12 +1,15 @@
 #include <stdio.h>
-#define num1 6
-#define num2 3
 int main() {
-#if num1<num2
-	register unsigned long m=num1,n=num2,o;
-#else
-	register unsigned long n=num1,m=num2,o;
-#endif
+	int num[2],m,n,o;
+	printf("Please type num1 & num2: ");
+	scanf("%i%i",num,num+1);
+	if(*num<*(num+1)) {
+		m=*num;
+		n=*(num+1);
+	}else {
+		n=*num;
+		m=*(num+1);
+	}
 a:
 	o=m%n;
 	if(o) {
@@ -14,6 +17,6 @@ a:
 		n=o;
 		goto a;
 	}
-	printf("%lu %lu",n,num1/n*num2);
+	printf("%lu %lu",n,*num/n**(num+1));
 	return 0;
 }

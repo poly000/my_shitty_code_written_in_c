@@ -2,6 +2,7 @@
 int main() {
 	register unsigned long s=1;
 	unsigned long x;
+	printf("Please type a num: "); 
 	scanf("%lu",&x);
 	if(x>33) {
 		puts("TOO BIG!");
@@ -14,6 +15,6 @@ int main() {
 	do {
 		s*=x--;
 	} while(x>1);
-	printf("%lu\n",s);
+	printf("result: %lu\n",s);
 	return 0;
 }

@@ -1,8 +1,9 @@
 #include <stdio.h>
-#define num 1000
- 
 int main(){
 	register int x,y,z,n,i=0;
+	int num;
+	printf("Please type num: ");
+	scanf("%i",&num); 
 	if(num%4!=0||num<32){
 		printf("%d is not able",num);
 		return 1;
