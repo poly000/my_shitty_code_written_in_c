@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 int main() {
-	int iNum[4],iTemp[4][129]= {0},iBinary[4][8]= {0};
+	int iNum[4],*iTemp,*iBinary;
 	register int i=0,iTailNum,iDoubleNum,iTemp2,j,k;
 	scanf("%i.%i.%i.%i",iNum,&iNum[1],&iNum[2],&iNum[3]);
 	for (; i<4; i++)
@@ -10,22 +11,30 @@ int main() {
 		}
 	i=0;
 a:
+	iTemp=malloc(129*sizeof(int));
+	iBinary=malloc(8*sizeof(int));
+	for (j=0;j<129;j++)
+		iTemp[j]=0;
+	for (j=0;j<8;j++)
+		iBinary[j]=0;
 	iDoubleNum=1;
 	iTemp2=iNum[i];
 	do {
 		iDoubleNum*=2;
 		iTailNum=iTemp2%iDoubleNum;
 		iTemp2-=iTailNum;
-		iTemp[i][iTailNum]=1;
+		iTemp[iTailNum]=1;
 	} while(iDoubleNum<=iNum[i]);
 	for (j=1,k=7; k>-1; k--,j*=2)
-		if (iTemp[i][j])
-			iBinary[i][k]=1;
-	printf("%i%i%i%i%i%i%i%i",iBinary[i][0],iBinary[i][1],iBinary[i][2],iBinary[i][3],iBinary[i][4],iBinary[i][5],iBinary[i][6],iBinary[i][7]);
+		if (iTemp[j])
+			iBinary[k]=1;
+	printf("%i%i%i%i%i%i%i%i",*iBinary,iBinary[1],iBinary[2],iBinary[3],iBinary[4],iBinary[5],iBinary[6],iBinary[7]);
 	if (++i==4) {
 		putchar('\n');
 		return 0;
 	} else
 		putchar(' ');
+	free(iTemp);
+	free(iBinary);
 	goto a;
 }

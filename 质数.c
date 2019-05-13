@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define many 100000 
+#define many 100000
 unsigned long num_[many]= {2};
 int main() {
 #if many==1

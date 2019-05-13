@@ -5,7 +5,6 @@
 #define max_wrong_times 30 /* make it as you need */
 int main() {
 	register unsigned long true_num,wronged_times,guest_num;
-	unsigned long guest_num_;
 	char yesno;
 	goto b;
 a:
@@ -29,8 +28,7 @@ b:
 	wronged_times=0;
 c:
 	printf("Please type a number: ");
-	scanf("%lu",&guest_num_);
-	guest_num=guest_num_;
+	scanf("%lu",guest_num);
 	if(guest_num==true_num) {
 		goto a;
 	} else {
