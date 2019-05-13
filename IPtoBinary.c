@@ -12,7 +12,11 @@ int main() {
 	i=0;
 a:
 	iTemp=malloc(129*sizeof(int));
+	if(iTemp==0)
+		return 1;
 	iBinary=malloc(8*sizeof(int));
+	if(iBinary==0)
+		return 1;
 	for (j=0;j<129;j++)
 		iTemp[j]=0;
 	for (j=0;j<8;j++)

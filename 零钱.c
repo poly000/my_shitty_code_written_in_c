@@ -2,6 +2,8 @@
 #include <stdlib.h>
 int main(){
 	int *n=malloc(sizeof(int)*5);
+	if(n==0)
+		return 1; 
 	register int yuan,jiao,fen;
 	double total;
 	scanf("%d%d%d%d%d",n,n+1,n+2,n+3,n+4);
