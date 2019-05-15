@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define num_z 1024
-#define num_y 1024
-#define num_x 1024
+#define num_z 1024 
+#define num_y 1024 
+#define num_x 1024 
 
 int main() {
 	register char *a=(char *)malloc(sizeof(char)*(num_x*num_y*num_z));
