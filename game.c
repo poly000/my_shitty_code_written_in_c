@@ -10,11 +10,9 @@ int main() {
 	goto b;
 a:
 	if(wronged_times<=max_wrong_times) {
-		fprintf(stderr,"You won as %lu wronged times only!\n",wronged_times);
-		fprintf(stderr,"Play again? (y)\n");
+		fprintf(stderr,"You won as %lu wronged times only!\nPlay again? (y)\n",wronged_times);
 	} else {
-		fprintf(stderr,"You lost...\n");
-		fprintf(stderr,"Try again? (y)\n");
+		fprintf(stderr,"You lost...\nTry again? (y)\n");
 	}
 	getchar();
 	yesno=getchar();
