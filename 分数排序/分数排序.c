@@ -8,17 +8,17 @@ typedef struct person {
 } P;
 
 int main() {
-	P t,*p=(P *)malloc(sizeof(P)*3);
-	if(p==0)
-		return 1;
-	char name[25];
-	register int i,j,k;
 	FILE *fp;
 	unsigned long N;
 	fp=fopen("data.txt","r");
 	if(fp==0)
 		return 1;
 	fscanf(fp,"%lu",&N);
+	P t,*p=(P *)malloc(sizeof(P)*N);
+	if(p==0)
+		return 1;
+	char name[25];
+	register int i,j,k;
 	for(i=0; i<N; i++) {
 		for(k=0;k<25;k++)
 			name[k]='\0';
