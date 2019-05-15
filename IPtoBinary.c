@@ -13,10 +13,10 @@ int main() {
 	i=0;
 	printf("\nBinary:\n");
 a:
-	iTemp=malloc(129*sizeof(int));
+	iTemp=(int *)malloc(129*sizeof(int));
 	if(iTemp==0)
 		return 1;
-	iBinary=malloc(8*sizeof(int));
+	iBinary=(int *)malloc(8*sizeof(int));
 	if(iBinary==0)
 		return 1;
 	for (j=0;j<129;j++)

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
-	register int *n=malloc(sizeof(int)*5),yuan,jiao,fen;
+	register int *n=(int *)malloc(sizeof(int)*5),yuan,jiao,fen;
 	if(n==0)
 		return 1;
 	double total;

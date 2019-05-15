@@ -5,7 +5,7 @@
 #define num_x 1024
 
 int main() {
-	register char *a=malloc(sizeof(char)*(num_x*num_y*num_z));
+	register char *a=(char *)malloc(sizeof(char)*(num_x*num_y*num_z));
 	if(a==0)
 		return 1;
 	register int x=0,y=0,z=0;
