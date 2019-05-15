@@ -10,11 +10,11 @@ int main() {
 	goto b;
 a:
 	if(wronged_times<=max_wrong_times) {
-		printf("You won as %lu wronged times only!\n",wronged_times);
-		printf("Play again? (y)\n");
+		fprintf(stderr,"You won as %lu wronged times only!\n",wronged_times);
+		fprintf(stderr,"Play again? (y)\n");
 	} else {
-		printf("You lost...\n");
-		printf("Try again? (y)\n");
+		fprintf(stderr,"You lost...\n");
+		fprintf(stderr,"Try again? (y)\n");
 	}
 	getchar();
 	yesno=getchar();
@@ -28,16 +28,16 @@ b:
 	true_num=rand()%max;
 	wronged_times=0;
 c:
-	printf("Please type a number: ");
+	fprintf(stderr,"Please type a number: ");
 	scanf("%lu",&guest_num);
 	if(guest_num==true_num) {
 		goto a;
 	} else {
 		wronged_times++;
 		if(guest_num>true_num) {
-			printf("Too big!\n\n");
+			fprintf(stderr,"Too big!\n\n");
 		} else {
-			printf("Too small!\n\n");
+			fprintf(stderr,"Too small!\n\n");
 		}
 		goto c;
 	}

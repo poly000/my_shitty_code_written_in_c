@@ -19,7 +19,7 @@ a:
 		if(++y==num_y) {
 			y=0;
 			if(++x==num_x) {
-				printf("done.\n");
+				fprintf(stderr,"done.\n");
 				getchar();
 				return 0;
 			}

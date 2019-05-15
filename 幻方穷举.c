@@ -38,9 +38,9 @@ int main() {
 																			a[x[8]][y[8]]=9;
 																			if(a[0][0]+a[0][1]+a[0][2]==a[0][0]+a[1][1]+a[2][2]&&a[1][0]+a[1][1]+a[1][2]==a[0][0]+a[1][1]+a[2][2]&&a[1][0]+a[1][1]+a[1][2]==a[2][0]+a[2][1]+a[2][2]&&a[0][0]+a[1][0]+a[2][0]==a[2][0]+a[2][1]+a[2][2]&&a[0][0]+a[1][0]+a[2][0]==a[0][1]+a[1][1]+a[2][1]&&a[0][1]+a[1][1]+a[2][1]==a[0][2]+a[1][2]+a[2][2]&&a[0][2]+a[1][1]+a[2][0]) {
 																				n++;
-																				printf("%2d%2d%2d\n",a[0][0],a[0][1],a[0][2]);
-																				printf("%2d%2d%2d\n",a[1][0],a[1][1],a[1][2]);
-																				printf("%2d%2d%2d\n-------\n",a[2][0],a[2][1],a[2][2]);
+																				fprintf(stdout,"%2d%2d%2d\n",a[0][0],a[0][1],a[0][2]);
+																				fprintf(stdout,"%2d%2d%2d\n",a[1][0],a[1][1],a[1][2]);
+																				fprintf(stdout,"%2d%2d%2d\n-------\n",a[2][0],a[2][1],a[2][2]);
 																			}
 																		}
 																}
@@ -51,6 +51,6 @@ int main() {
 						}
 
 				}
-	printf("There are %d different types of magic squares.",n/8);
+	fprintf(stdout,"There are %d different types of magic squares.",n/8);
 	return 0;
 }

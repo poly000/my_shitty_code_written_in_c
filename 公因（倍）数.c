@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main() {
 	int num[2],m,n,o;
-	printf("Please type num1 & num2: ");
+	fprintf(stderr,"Please type num1 & num2: ");
 	scanf("%i%i",num,num+1);
 	if(*num<*(num+1)) {
 		m=*num;
@@ -17,6 +17,6 @@ a:
 		n=o;
 		goto a;
 	}
-	printf("%lu %lu",n,*num/n**(num+1));
+	fprintf(stdout,"%lu %lu",n,*num/n**(num+1));
 	return 0;
 }

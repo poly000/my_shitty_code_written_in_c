@@ -3,7 +3,7 @@
 int main() {
 	int iNum[4];
 	register int *iTemp,*iBinary,i=0,iTailNum,iDoubleNum,iTemp2,j,k;
-	printf("Please type a IP address: ");
+	fprintf(stderr,"Please type a IP address: ");
 	scanf("%i.%i.%i.%i",iNum,&iNum[1],&iNum[2],&iNum[3]);
 	for (; i<4; i++)
 		if (iNum[i]>255||iNum[i]<0) {
@@ -11,7 +11,7 @@ int main() {
 			return 1;
 		}
 	i=0;
-	printf("\nBinary:\n");
+	fprintf(stdout,"\nBinary:\n");
 a:
 	iTemp=(int *)malloc(129*sizeof(int));
 	if(iTemp==0)
@@ -34,12 +34,12 @@ a:
 	for (j=1,k=7; k>-1; k--,j*=2)
 		if (iTemp[j])
 			iBinary[k]=1;
-	printf("%i%i%i%i%i%i%i%i",*iBinary,iBinary[1],iBinary[2],iBinary[3],iBinary[4],iBinary[5],iBinary[6],iBinary[7]);
+	fprintf(stdout,"%i%i%i%i%i%i%i%i",*iBinary,iBinary[1],iBinary[2],iBinary[3],iBinary[4],iBinary[5],iBinary[6],iBinary[7]);
 	if (++i==4) {
-		putchar('\n');
+		fputc('\n',stdout);
 		return 0;
 	} else
-		putchar(' ');
+		fputc(' ',stdout);
 	free(iTemp);
 	free(iBinary);
 	goto a;
