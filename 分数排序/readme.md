@@ -3,11 +3,8 @@ Sorry but I can't speak English well.
 `data.txt` as:
 ```
 how many people
-
 [name]
-
 [grace]
-
 ...
 ```
 
