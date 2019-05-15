@@ -1,25 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define N 10
+#include <string.h>
 
 typedef struct person {
 	float grace;
 	char *name;
 } P;
+
 int main() {
 	P t,*p=(P *)malloc(sizeof(P)*3);
 	if(p==0)
 		return 1;
-	char name[N][25]= {0};
-	register int i,j;
+	char name[25];
+	register int i,j,k;
+	FILE *fp;
+	unsigned long N;
+	fp=fopen("data.txt","r");
+	if(fp==0)
+		return 1;
+	fscanf(fp,"%lu",&N);
 	for(i=0; i<N; i++) {
-		printf("Please type name %d: ",i);
-		scanf("%s",name[i]);
-		(p+i)->name=name[i];
-		putchar('\n');
-		printf("Please type grace %d: ",i);
-		scanf("%f",&(p+i)->grace);
-		putchar('\n');
+		for(k=0;k<25;k++)
+			name[k]='\0';
+		fscanf(fp,"%s",name);
+		k=strlen(name)+1;
+		(p+i)->name=(char *)malloc(sizeof(char)*k);
+		if((p+i)->name==0)
+			return 1;
+		strncpy((p+i)->name,name,k);
+		fscanf(fp,"%f",&(p+i)->grace);
 	}
 	for(j=1; j<N; j++) {
 		i=j;
@@ -32,8 +41,17 @@ int main() {
 			i--;
 		}
 	}
-	printf("Name%11crace\n\n",'G');
+	k=1;
+	while(k!=0)
+		k=fclose(fp);
+	fp=fopen("output.txt","w+");
+	if(fp==0)
+		return 1;
+	fprintf(fp,"%20s%13cGrace\n","Name",' ');
 	for(i=0; i<N; i++)
-		printf("%19.1f\r%s\n",(p+i)->grace,(p+i)->name);
+		fprintf(fp,"%20s%18.1f\n",(p+i)->name,(p+i)->grace);
+	k=1;
+	while(k!=0)
+		k=fclose(fp);
 	return 0;
 }
