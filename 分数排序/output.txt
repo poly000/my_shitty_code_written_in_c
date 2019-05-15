@@ -1,6 +1,18 @@
-                Name             Grace
-                aaaa              60.0
-                 saa              35.0
-            zhangsan              30.0
-                lisi              20.0
-              wangwu              10.0
+Name
+Grace
+
+block
+95.0
+
+liangxin
+80.0
+
+juzhong
+80.0
+
+zmr
+75.0
+
+PE
+0.0
+

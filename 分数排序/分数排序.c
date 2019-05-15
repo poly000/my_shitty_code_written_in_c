@@ -47,9 +47,9 @@ int main() {
 	fp=fopen("output.txt","w+");
 	if(fp==0)
 		return 1;
-	fprintf(fp,"%20s%13cGrace\n","Name",' ');
+	fprintf(fp,"Name\nGrace\n\n");
 	for(i=0; i<N; i++)
-		fprintf(fp,"%20s%18.1f\n",(p+i)->name,(p+i)->grace);
+		fprintf(fp,"%s\n%.1f\n\n",(p+i)->name,(p+i)->grace);
 	k=1;
 	while(k!=0)
 		k=fclose(fp);
