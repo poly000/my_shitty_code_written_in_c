@@ -7,6 +7,6 @@ how many string
 ...
 ```
 
-then build the `分数排序.c` and run
+then build the `字符串排序.c` and run
 
 you will get `output.txt` if lucky
