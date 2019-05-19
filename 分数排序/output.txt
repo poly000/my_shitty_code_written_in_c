@@ -1,11 +1,11 @@
 Name
 Grace
 
+block
+110.0
+
 PE
 100.0
-
-block
-95.0
 
 liangxin
 80.0

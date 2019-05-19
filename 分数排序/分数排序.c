@@ -20,8 +20,6 @@ int main() {
 	char name[25];
 	register int i,j,k;
 	for(i=0; i<N; i++) {
-		for(k=0;k<25;k++)
-			name[k]='\0';
 		fscanf(fp,"%s",name);
 		k=strlen(name)+1;
 		(p+i)->name=(char *)malloc(sizeof(char)*k);
@@ -30,7 +28,7 @@ int main() {
 		strncpy((p+i)->name,name,k);
 		fscanf(fp,"%f",&(p+i)->grace);
 	}
-	for(j=1; j<N; j++) {
+	for(j=N-1; j>0; j--) {
 		i=j;
 		while(i>0) {
 			if((p+i)->grace>(p+i-1)->grace) {
