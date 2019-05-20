@@ -14,12 +14,13 @@ int main() {
 	k=(unsigned long *)malloc(sizeof(unsigned long)*N);
 	if(k==0)
 		return 1;
+	fseek(fp,1L,1);
 	for(i=0; i<N; i++) {
 		k[i]=0;
 		*(p+i)=(char *)malloc(sizeof(char)*size);
 		if(*(p+i)==0)
 			return 1;
-		fscanf(fp,"%s",*(p+i));
+		fgets(*(p+i),size,fp);
 	}
 	fclose(fp);
 	fp=fopen("output.txt","w+");
@@ -30,7 +31,7 @@ int main() {
 			i=(unsigned long)rand()%N;
 		} while(k[i]!=0);
 		k[i]=1;
-		fprintf(fp,"%s\n",*(p+i));
+		fprintf(fp,"%s",*(p+i));
 	}
 	fclose(fp);
 	return 0;
