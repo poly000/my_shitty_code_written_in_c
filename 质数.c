@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define many 100000 
-unsigned long num_[many]= {2};
+unsigned long long num_[many]= {2};
 int main() {
 	FILE *fp=fopen("output.txt","w+");
 	if(fp==0)
@@ -11,7 +11,7 @@ int main() {
 	return 0;
 #elif many>1
 	fprintf(fp,"%10d",2);
-	register unsigned long i=0,num=3,j=1,k=1;
+	register unsigned long long i=0,num=3,j=1,k=1;
 	do {
 		while(i<j) {
 			if(num%num_[i]==0)
@@ -22,10 +22,10 @@ int main() {
 			num_[i]=num;
 			j++;
 			if(++k==10) {
-				fprintf(fp,"%10lu\n",num);
+				fprintf(fp,"%10llu\n",num);
 				k=0;
 			} else
-				fprintf(fp,"%10lu",num);
+				fprintf(fp,"%10llu",num);
 		}
 		i=0;
 		num+=2;

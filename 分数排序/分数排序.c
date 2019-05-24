@@ -9,11 +9,11 @@ typedef struct person {
 
 int main() {
 	FILE *fp;
-	unsigned long N;
+	unsigned long long N;
 	fp=fopen("data.txt","r");
 	if(fp==0)
 		return 1;
-	fscanf(fp,"%lu",&N);
+	fscanf(fp,"%llu",&N);
 	P t,*p=(P *)malloc(sizeof(P)*N);
 	if(p==0)
 		return 1;

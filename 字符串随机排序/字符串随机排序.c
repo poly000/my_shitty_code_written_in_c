@@ -4,14 +4,14 @@
 #define size 400
 
 int main() {
-	unsigned long N;
-	register unsigned long j,i,*k,l;
+	unsigned long long N;
+	register unsigned long long j,i,*k,l;
 	FILE *fp=fopen("data.txt","r");
 	if(fp==0)
 		return 1;
-	fscanf(fp,"%lu",&N);
+	fscanf(fp,"%llu",&N);
 	register char **p=(char **)malloc(sizeof(char *)*N); 
-	k=(unsigned long *)malloc(sizeof(unsigned long)*N);
+	k=(unsigned long long *)malloc(sizeof(unsigned long long)*N);
 	if(k==0)
 		return 1;
 	fseek(fp,1L,1);
@@ -28,7 +28,7 @@ int main() {
 	for(j=0; j<N; j++) {
 		do {
 			srand(l++);
-			i=(unsigned long)rand()%N;
+			i=(unsigned long long)rand()%N;
 		} while(k[i]!=0);
 		k[i]=1;
 		fprintf(fp,"%s",*(p+i));
