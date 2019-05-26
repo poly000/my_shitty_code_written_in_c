@@ -3,35 +3,35 @@
 #include <string.h>
 
 typedef struct person {
-	float grace;
-	char *name;
-} P;
+	float fGrace;
+	char *cpName;
+} per;
 
 int main() {
-	FILE *fp;
-	unsigned long long N;
-	fp=fopen("data.txt","r");
-	if(fp==0)
+	FILE *fipFilePointer;
+	unsigned long long ullN;
+	fipFilePointer=fopen("data.txt","r");
+	if(fipFilePointer==0)
 		return 1;
-	fscanf(fp,"%llu",&N);
-	P t,*p=(P *)malloc(sizeof(P)*N);
+	fscanf(fipFilePointer,"%llu",&ullN);
+	per t,*p=(per *)malloc(sizeof(per)*ullN);
 	if(p==0)
 		return 1;
-	char name[25];
+	char cName[25];
 	register int i,j,k;
-	for(i=0; i<N; i++) {
-		fscanf(fp,"%s",name);
-		k=strlen(name)+1;
-		(p+i)->name=(char *)malloc(sizeof(char)*k);
-		if((p+i)->name==0)
+	for(i=0; i<ullN; i++) {
+		fscanf(fipFilePointer,"%s",cName);
+		k=strlen(cName)+1;
+		(p+i)->cpName=(char *)malloc(sizeof(char)*k);
+		if((p+i)->cpName==0)
 			return 1;
-		strncpy((p+i)->name,name,k);
-		fscanf(fp,"%f",&(p+i)->grace);
+		strncpy((p+i)->cpName,cName,k);
+		fscanf(fipFilePointer,"%f",&(p+i)->fGrace);
 	}
-	for(j=N-1; j>0; j--) {
+	for(j=ullN-1; j>0; j--) {
 		i=j;
 		while(i>0) {
-			if((p+i)->grace>(p+i-1)->grace) {
+			if((p+i)->fGrace>(p+i-1)->fGrace) {
 				t=*(p+i-1);
 				*(p+i-1)=*(p+i);
 				*(p+i)=t;
@@ -41,15 +41,15 @@ int main() {
 	}
 	k=1;
 	while(k!=0)
-		k=fclose(fp);
-	fp=fopen("output.txt","w+");
-	if(fp==0)
+		k=fclose(fipFilePointer);
+	fipFilePointer=fopen("output.txt","w+");
+	if(fipFilePointer==0)
 		return 1;
-	fprintf(fp,"Name\nGrace\n\n");
-	for(i=0; i<N; i++)
-		fprintf(fp,"%s\n%.1f\n\n",(p+i)->name,(p+i)->grace);
+	fprintf(fipFilePointer,"Name\nGrace\n\n");
+	for(i=0; i<ullN; i++)
+		fprintf(fipFilePointer,"%s\n%.1f\n\n",(p+i)->cpName,(p+i)->fGrace);
 	k=1;
 	while(k!=0)
-		k=fclose(fp);
+		k=fclose(fipFilePointer);
 	return 0;
 }

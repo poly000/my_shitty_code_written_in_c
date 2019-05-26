@@ -4,36 +4,35 @@
 #define size 400
 
 int main() {
-	unsigned long long N;
+	unsigned long long ullN;
 	register unsigned long long j,i,*k,l;
-	FILE *fp=fopen("data.txt","r");
-	if(fp==0)
+	FILE *fiFilePointer=fopen("data.txt","r");
+	if(fiFilePointer==0)
 		return 1;
-	fscanf(fp,"%llu",&N);
-	register char **p=(char **)malloc(sizeof(char *)*N); 
-	k=(unsigned long long *)malloc(sizeof(unsigned long long)*N);
+	fscanf(fiFilePointer,"%llu",&ullN);
+	register char **r_cppPointer=(char **)malloc(sizeof(char *)*ullN); 
+	k=(unsigned long long *)malloc(sizeof(unsigned long long)*ullN);
 	if(k==0)
 		return 1;
-	fseek(fp,1L,1);
-	for(i=0; i<N; i++) {
+	fseek(fiFilePointer,1L,1);
+	for(i=0; i<ullN; i++) {
 		k[i]=0;
-		*(p+i)=(char *)malloc(sizeof(char)*size);
-		if(*(p+i)==0)
+		*(r_cppPointer+i)=(char *)malloc(sizeof(char)*size);
+		if(*(r_cppPointer+i)==0)
 			return 1;
-		fgets(*(p+i),size,fp);
+		fgets(*(r_cppPointer+i),size,fiFilePointer);
 	}
-	fclose(fp);
-	fp=fopen("output.txt","w+");
+	fclose(fiFilePointer);
+	fiFilePointer=fopen("output.txt","w+");
 	l=time(0);
-	for(j=0; j<N; j++) {
+	for(j=0; j<ullN; j++) {
 		do {
 			srand(l++);
-			i=(unsigned long long)rand()%N;
+			i=(unsigned long long)rand()%ullN;
 		} while(k[i]!=0);
 		k[i]=1;
-		fprintf(fp,"%s",*(p+i));
+		fprintf(fiFilePointer,"%s",*(r_cppPointer+i));
 	}
-	fclose(fp);
+	fclose(fiFilePointer);
 	return 0;
 }
-
