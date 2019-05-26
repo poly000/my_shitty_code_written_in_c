@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main(){
 	register int x,y,z,n,i=0;
 	int num;

@@ -9,12 +9,15 @@ int main() {
 	FILE *fiFilePointer=fopen("data.txt","r");
 	if(fiFilePointer==0)
 		return 1;
-	fscanf(fiFilePointer,"%llu",&ullN);
-	register char **r_cppPointer=(char **)malloc(sizeof(char *)*ullN); 
+	do
+		if(fgetc(fiFilePointer)=='\n')
+			ullN++;
+	while(!feof(fiFilePointer));
+	rewind(fiFilePointer);
+	register char **r_cppPointer=(char **)malloc(sizeof(char *)*ullN);
 	k=(unsigned long long *)malloc(sizeof(unsigned long long)*ullN);
 	if(k==0)
 		return 1;
-	fseek(fiFilePointer,1L,1);
 	for(i=0; i<ullN; i++) {
 		k[i]=0;
 		*(r_cppPointer+i)=(char *)malloc(sizeof(char)*size);
