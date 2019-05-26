@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 #define size 400
 
 int main() {
-	unsigned long long ullN;
+	unsigned long long ullN=1;
 	register unsigned long long j,i,*k,l;
 	FILE *fiFilePointer=fopen("data.txt","r");
 	if(fiFilePointer==0)
@@ -26,6 +27,8 @@ int main() {
 		if(*(r_cppPointer+i)==0)
 			return 1;
 		fgets(*(r_cppPointer+i),size,fiFilePointer);
+		if(ullN-i==1)
+			strcat(*(r_cppPointer+i),"\n"); 
 	}
 	fclose(fiFilePointer);
 	fiFilePointer=fopen("output.txt","w+");
