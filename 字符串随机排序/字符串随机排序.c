@@ -9,9 +9,12 @@ int main() {
 	FILE *fiFilePointer=fopen("data.txt","r");
 	if(fiFilePointer==0)
 		return 1;
-	do if(fgetc(fiFilePointer)=='\n')
-		   ullN++;
-	while(!feof(fiFilePointer));
+	for(;;) {
+		if(fgetc(fiFilePointer)=='\n')
+			ullN++;
+		if(feof(fiFilePointer)) 
+			break;
+	}
 	rewind(fiFilePointer);
 	register char **r_cppPointer=(char **)malloc(sizeof(char *)*ullN);
 	k=(unsigned long long *)malloc(sizeof(unsigned long long)*ullN);
