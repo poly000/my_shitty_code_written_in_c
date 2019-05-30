@@ -2,45 +2,22 @@
 #include <stdlib.h>
 int main() {
 	int iNum[4];
-	register int *iTemp,*iBinary,i=0,iTailNum,iDoubleNum,iTemp2,j,k;
-	fprintf(stderr,"Please type a IP address: ");
-	scanf("%i.%i.%i.%i",iNum,&iNum[1],&iNum[2],&iNum[3]);
-	for (; i<4; i++)
-		if (iNum[i]>255||iNum[i]<0) {
-			printf("ERROR: WRONG VALUE\n");
-			return 1;
+	register int iDouble,i,j;
+	scanf("%d.%d.%d.%d",iNum,iNum+1,iNum+2,iNum+3);
+	for(i=0; i<4; i++){
+		if(*(iNum+i)>255)
+			return 0;
+		iDouble=256;
+		for(j=0; j<8; j++){
+			iDouble>>=1;
+			if((*(iNum+i)&iDouble)==iDouble)
+				putchar('1');
+			else
+				putchar('0');
 		}
-	i=0;
-	fprintf(stdout,"\nBinary:\n");
-a:
-	iTemp=(int *)malloc(129*sizeof(int));
-	if(iTemp==0)
-		return 1;
-	iBinary=(int *)malloc(8*sizeof(int));
-	if(iBinary==0)
-		return 1;
-	for (j=0;j<129;j++)
-		iTemp[j]=0;
-	for (j=0;j<8;j++)
-		iBinary[j]=0;
-	iDoubleNum=1;
-	iTemp2=iNum[i];
-	do {
-		iDoubleNum*=2;
-		iTailNum=iTemp2%iDoubleNum;
-		iTemp2-=iTailNum;
-		iTemp[iTailNum]=1;
-	} while(iDoubleNum<=iNum[i]);
-	for (j=1,k=7; k>-1; k--,j*=2)
-		if (iTemp[j])
-			iBinary[k]=1;
-	fprintf(stdout,"%i%i%i%i%i%i%i%i",*iBinary,iBinary[1],iBinary[2],iBinary[3],iBinary[4],iBinary[5],iBinary[6],iBinary[7]);
-	if (++i==4) {
-		fputc('\n',stdout);
-		return 0;
-	} else
-		fputc(' ',stdout);
-	free(iTemp);
-	free(iBinary);
-	goto a;
+		if(i<3)
+			putchar(' ');
+	}
+	putchar('\n');
+	return 0;
 }

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define many 100000 
+#define many 10000
 unsigned long long num_[many]= {2};
 int main() {
 	FILE *fp=fopen("output.txt","w+");
