@@ -8,7 +8,7 @@ int main() {
 	fp=fopen("output.txt","w+");
 	fclose(fp);
 a:
-	scanf("%s",a);
+	gets(a);
 	fp=fopen("output.txt","a+");
 	iWeishu=strlen(a);
 	for(j=-25; j<26; j++) {
