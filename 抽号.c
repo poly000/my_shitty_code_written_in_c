@@ -7,11 +7,11 @@ int main() {
 	register unsigned long long j,i,*k,l;
 	FILE *fp;
 	fprintf(stderr,"Please type how many numbers are there: ");
-	fscanf(stdin,"%lu",&N);
+	fscanf(stdin,"%I64u",&N);
 	k=(unsigned long long *)malloc(sizeof(unsigned long long)*N);
 	if(k==0)
 		return 1;
-	for(i=0;i<N;i++) 
+	for(i=0;i<N;i++)
 		k[i]=0;
 	fp=fopen("output.txt","w+");
 	l=time(0);
@@ -21,10 +21,9 @@ int main() {
 			i=(unsigned long long)rand()%N;
 		} while(k[i]!=0);
 		k[i]=1;
-		fprintf(fp,"%5lu: %5llu\n",j+1,i+1);
+		fprintf(fp,"%5I64u: %5I64u\n",j+1,i+1);
 	}
 	free(k);
 	fclose(fp);
-	return 0; 
+	return 0;
 }
-

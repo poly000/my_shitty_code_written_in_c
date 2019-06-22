@@ -9,26 +9,25 @@ typedef struct person {
 
 int main() {
 	FILE *fipFilePointer;
-	unsigned long long ullN;
+	unsigned long long uI64N;
 	fipFilePointer=fopen("data.txt","r");
 	if(fipFilePointer==0)
 		return 1;
-	fscanf(fipFilePointer,"%llu",&ullN);
-	per t,*p=(per *)malloc(sizeof(per)*ullN);
+	fscanf(fipFilePointer,"%I64u",&uI64N);
+	per t,*p=(per *)malloc(sizeof(per)*uI64N);
 	if(p==0)
 		return 1;
 	char cName[25];
-	register int i,j,k;
-	for(i=0; i<ullN; i++) {
+	register unsigned long long i,j;
+	for(i=0; i<uI64N; i++) {
 		fscanf(fipFilePointer,"%s",cName);
-		k=strlen(cName)+1;
-		(p+i)->cpName=(char *)malloc(sizeof(char)*k);
+		(p+i)->cpName=(char *)malloc(sizeof(char)*25);
 		if((p+i)->cpName==0)
 			return 1;
-		strncpy((p+i)->cpName,cName,k);
+		strncpy((p+i)->cpName,cName,25);
 		fscanf(fipFilePointer,"%f",&(p+i)->fGrace);
 	}
-	for(j=ullN-1; j>0; j--) {
+	for(j=uI64N-1; j>0; j--) {
 		i=j;
 		while(i>0) {
 			if((p+i)->fGrace>(p+i-1)->fGrace) {
@@ -39,17 +38,13 @@ int main() {
 			i--;
 		}
 	}
-	k=1;
-	while(k!=0)
-		k=fclose(fipFilePointer);
+	fclose(fipFilePointer);
 	fipFilePointer=fopen("output.txt","w+");
 	if(fipFilePointer==0)
 		return 1;
 	fprintf(fipFilePointer,"Name\nGrace\n\n");
-	for(i=0; i<ullN; i++)
+	for(i=0; i<uI64N; i++)
 		fprintf(fipFilePointer,"%s\n%.1f\n\n",(p+i)->cpName,(p+i)->fGrace);
-	k=1;
-	while(k!=0)
-		k=fclose(fipFilePointer);
+	fclose(fipFilePointer);
 	return 0;
 }

@@ -22,10 +22,10 @@ int main() {
 			num_[i]=num;
 			j++;
 			if(++k==10) {
-				fprintf(fp,"%10llu\n",num);
+				fprintf(fp,"%10I64u\n",num);
 				k=0;
 			} else
-				fprintf(fp,"%10llu",num);
+				fprintf(fp,"%10I64u",num);
 		}
 		i=0;
 		num+=2;

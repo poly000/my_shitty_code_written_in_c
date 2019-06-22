@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main() {
-	int num[2],m,n,o;
+	unsigned long long num[2],m,n,o;
 	fprintf(stderr,"Please type num1 & num2: ");
-	scanf("%i%i",num,num+1);
+	scanf("%I64u%I64u",num,num+1);
 	if(*num<*(num+1)) {
 		m=*num;
 		n=*(num+1);
@@ -17,6 +17,6 @@ a:
 		n=o;
 		goto a;
 	}
-	fprintf(stdout,"%lu %lu",n,*num/n**(num+1));
+	fprintf(stdout,"%I64u %I64u",n,*num/n**(num+1));
 	return 0;
 }
