@@ -4,7 +4,7 @@
 
 int main() {
 	unsigned long long N;
-	register unsigned long long j,i,*k;
+	register unsigned long long j,i,*k,time_=(unsigned long long)time(0);
 	FILE *fp;
 	fprintf(stderr,"Please type how many numbers are there: ");
 	fscanf(stdin,"%I64u",&N);
@@ -16,7 +16,7 @@ int main() {
 	fp=fopen("output.txt","w+");
 	for(j=0; j<N; j++) {
 		do {
-			srand(time(0));
+			srand(time_++);
 			i=(unsigned long long)rand()%N;
 		} while(k[i]!=0);
 		k[i]=1;

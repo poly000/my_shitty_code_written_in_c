@@ -6,14 +6,14 @@
 
 int main() {
 	unsigned long long ullN=1;
-	register unsigned long long j,i,*k;
+	register unsigned long long j,i,*k,time_=(unsigned long long)time(0);
 	FILE *fiFilePointer=fopen("data.txt","r");
 	if(fiFilePointer==0)
 		return 1;
 	for(;;) {
 		if(fgetc(fiFilePointer)=='\n')
 			ullN++;
-		if(feof(fiFilePointer)) 
+		if(feof(fiFilePointer))
 			break;
 	}
 	rewind(fiFilePointer);
@@ -28,13 +28,13 @@ int main() {
 			return 1;
 		fgets(*(r_cppPointer+i),size,fiFilePointer);
 		if(ullN-i==1)
-			strcat(*(r_cppPointer+i),"\n"); 
+			strcat(*(r_cppPointer+i),"\n");
 	}
 	fclose(fiFilePointer);
 	fiFilePointer=fopen("output.txt","w+");
 	for(j=0; j<ullN; j++) {
 		do {
-			srand(time(0));
+			srand(time_++);
 			i=(unsigned long long)rand()%ullN;
 		} while(k[i]!=0);
 		k[i]=1;
