@@ -4,7 +4,7 @@
 
 int main() {
 	unsigned long long N;
-	register unsigned long long j,i,*k,l;
+	register unsigned long long j,i,*k;
 	FILE *fp;
 	fprintf(stderr,"Please type how many numbers are there: ");
 	fscanf(stdin,"%I64u",&N);

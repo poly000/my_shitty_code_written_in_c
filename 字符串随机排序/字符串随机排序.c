@@ -6,7 +6,7 @@
 
 int main() {
 	unsigned long long ullN=1;
-	register unsigned long long j,i,*k,l;
+	register unsigned long long j,i,*k;
 	FILE *fiFilePointer=fopen("data.txt","r");
 	if(fiFilePointer==0)
 		return 1;
@@ -32,10 +32,9 @@ int main() {
 	}
 	fclose(fiFilePointer);
 	fiFilePointer=fopen("output.txt","w+");
-	l=time(0);
 	for(j=0; j<ullN; j++) {
 		do {
-			srand(l++);
+			srand(time(0));
 			i=(unsigned long long)rand()%ullN;
 		} while(k[i]!=0);
 		k[i]=1;
