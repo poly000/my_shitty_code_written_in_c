@@ -14,10 +14,9 @@ int main() {
 	for(i=0;i<N;i++)
 		k[i]=0;
 	fp=fopen("output.txt","w+");
-	l=time(0);
 	for(j=0; j<N; j++) {
 		do {
-			srand(l++);
+			srand(time(0));
 			i=(unsigned long long)rand()%N;
 		} while(k[i]!=0);
 		k[i]=1;
