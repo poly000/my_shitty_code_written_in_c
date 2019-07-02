@@ -4,21 +4,21 @@
 
 int main() {
 	unsigned long long N;
-	register unsigned long long j,i,*k,time_=(unsigned long long)time(0);
+	register unsigned long long j,i,*k,_time = (unsigned long long)time(0);
 	FILE *fp;
 	fprintf(stderr,"Please type how many numbers are there: ");
 	fscanf(stdin,"%I64u",&N);
-	k=(unsigned long long *)malloc(sizeof(unsigned long long)*N);
-	if(k==0)
+	k = (unsigned long long *)malloc(sizeof(unsigned long long)*N);
+	if (k == 0)
 		return 1;
-	for(i=0;i<N;i++)
-		k[i]=0;
-	fp=fopen("output.txt","w+");
+	for (i=0; i<N; i++)
+		k[i] = 0;
+	fp = fopen("output.txt","w+");
 	for(j=0; j<N; j++) {
 		do {
-			srand(time_++);
-			i=(unsigned long long)rand()%N;
-		} while(k[i]!=0);
+			srand(++_time);
+			i = (unsigned long long)rand()%N;
+		} while(k[i] != 0);
 		k[i]=1;
 		fprintf(fp,"%5I64u: %5I64u\n",j+1,i+1);
 	}
