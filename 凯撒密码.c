@@ -3,7 +3,7 @@
 
 int main() {
 	int iWeishu,i,j;
-	char a[1025],*p=a;
+	char a[1025],*p = a;
 	FILE *fp;
 	fp=fopen("output.txt","w+");
 	fclose(fp);
