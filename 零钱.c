@@ -13,6 +13,6 @@ int main(){
 	yuan = (unsigned int)total;
 	fen = (unsigned int)(total*100)%10;
 	jiao = (total-yuan-fen*0.01)*10;
-	fprintf(stdout,"\n\tTotal\r%.2lf\n\n%u yuan %u jiao %u fen\n",total,yuan,jiao,fen);
+	fprintf(stdout,"\n\tTotal\r%.2g\n\n%u yuan %u jiao %u fen\n",total,yuan,jiao,fen);
 	return 0;
 }
