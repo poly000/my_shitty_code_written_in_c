@@ -6,7 +6,8 @@
 
 int main() {
 	unsigned long long ullN=1;
-	register unsigned long long j,i,*k,_time = (unsigned long long)time(0);
+	register unsigned long long j, i, _time = (unsigned long long)time(0);
+	char *k;
 	FILE *fiFilePointer=fopen("data.txt","r");
 	if (fiFilePointer == 0)
 		return 1;
@@ -18,11 +19,11 @@ int main() {
 	}
 	rewind(fiFilePointer);
 	register char **r_cppPointer = (char **)malloc(sizeof(char *)*ullN);
-	k = (unsigned long long *)malloc(sizeof(unsigned long long)*ullN);
-	if (k==0)
+	k = (char *)malloc(sizeof(char)*ullN);
+	if (k == (char *) 0)
 		return 1;
 	for (i=0; i<ullN; i++) {
-		k[i]=0;
+		k[i] = (char) 0;
 		*(r_cppPointer+i) = (char *)malloc(sizeof(char)*size);
 		if (*(r_cppPointer+i) == 0)
 			return 1;
@@ -35,8 +36,8 @@ int main() {
 		do {
 			srand(++_time);
 			i = (unsigned long long)rand()%ullN;
-		} while(k[i] != 0);
-		k[i] = 1;
+		} while(k[i] != (char) 0);
+		k[i] = (char) 1;
 		fprintf(fiFilePointer,"%s",*(r_cppPointer+i));
 	}
 	fclose(fiFilePointer);

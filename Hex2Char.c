@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(int argc, char **argv){
   if (argc != 2){
-    printf("Usage: %s HH",*argv);
+    printf("Usage: %s HH\n code 1: invailed argments\n code 2: invailed hex\n",*argv);
     return 1;
   }
   int iA = **(argv+1), iB = *(*(argv+1)+1);
