@@ -1,6 +1,6 @@
 # my_shitty_code_written_in_c
 
-[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://raw.githubusercontent.com/poly000/my_shitty_code_written_in_c/master/LICENSE) [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 
 My shitty code in C.
 
