@@ -1,3 +1,6 @@
+/*   Author: poly000
+ *   License: Anti 996 (MIT-like)
+ */
 #include <stdio.h>
 int main() {
 	unsigned long long num[2],m,n,o;

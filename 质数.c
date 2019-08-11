@@ -1,3 +1,6 @@
+/*   Author: poly000
+ *   License: Anti 996 (MIT-like)
+ */
 #include <stdio.h>
 #define many 10000
 unsigned long long num_[many] = {2};

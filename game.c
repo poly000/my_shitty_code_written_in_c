@@ -1,3 +1,6 @@
+/*   Author: poly000
+ *   License: Anti 996 (MIT-like)
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

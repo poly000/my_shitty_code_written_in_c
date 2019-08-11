@@ -1,7 +1,11 @@
+/*   Author: poly000
+ *   License: Anti 996 (MIT-like)
+ */
 #include <stdio.h>
 
 int main(){
-	register int x,y,z,n,i = 0;
+	register int x,y,z,n;
+	register int i = 0;
 	int num;
 	fprintf(stderr,"Please type num: ");
 	scanf("%i",&num);
@@ -17,6 +21,5 @@ a:
 	fprintf(stdout,"%6d cock(s), %6d hen(s), %6d chick(s)\n",x,y,z);
 	if (i == n)
 		return 0;
-	else
-		goto a;
+	goto a;
 }

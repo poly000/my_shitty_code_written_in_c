@@ -1,8 +1,12 @@
+/*   Author: poly000
+ *   License: Anti 996 (MIT-like)
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(){
-	register unsigned int *n=(unsigned int *)malloc(sizeof(unsigned int)*5),yuan,jiao,fen;
+	register unsigned int *n = (unsigned int *)malloc(sizeof(unsigned int)*5);
+	register unsigned int yuan,jiao,fen;
 	if (n == 0)
 		return 1;
 	double total;

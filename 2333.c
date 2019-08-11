@@ -1,3 +1,6 @@
+/*   Author: poly000
+ *   License: Anti 996 (MIT-like)
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #define num_z 1024
@@ -6,7 +9,7 @@
 
 int main() {
 	register char *cpA = (char *)malloc(sizeof(char)*(num_x*num_y*num_z));
-	if(cpA==0)
+	if(cpA == 0)
 		return 1;
 	register int r_iX = 0,r_iY = 0,r_iZ = 0;
 a:

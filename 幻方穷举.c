@@ -1,3 +1,6 @@
+/*   Author: poly000
+ *   License: Anti 996 (MIT-like)
+ */
 #include <stdio.h>
 int main() {
 	int a[3][3],x[9],y[9],n=0;
