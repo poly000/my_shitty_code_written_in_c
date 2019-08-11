@@ -1,4 +1,7 @@
 # my_shitty_code_written_in_c
+
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://raw.githubusercontent.com/poly000/my_shitty_code_written_in_c/master/LICENSE) [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+
 My shitty code in C.
 
 这是一个代码练习项目
