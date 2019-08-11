@@ -13,12 +13,12 @@ char cGetNu(void){
 }
 
 int main(void) {
-  int iType;
+  register int iType;
   printf("Press any key to start: ");
   getchar();
   do {
     printf("\nReslut: %d\nPress ENTER to continue, or any key else to quit.\n",cgetNu());
     iType = getchar();
-  } while(iType=='\n')
+  } while(iType=='\n');
   return 0;
 }
