@@ -2,6 +2,7 @@
  *   License: Anti 996 (MIT-like)
  */
 
+#include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -14,13 +15,10 @@ char cGetNu(time_t tTime){
 int main(void) {
   register time_t tTime = time(0);
   register int iType;
-  printf("Press any key to start: ");
-  if (getchar() != '\n')
-    getchar();
   do {
 	system("cls");
-    printf("\nReslut: %d\nPress ENTER to continue, or any key else to quit.\n",cGetNu(tTime++));
-    iType = getchar();
-  } while(iType == '\n');
+    printf("\nResult: %d\nPress ENTER to continue, or any key else to quit.\n",cGetNu(tTime++));
+    iType = getch();
+  } while(iType == 0x0d);
   return 0;
 }
