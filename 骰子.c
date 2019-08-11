@@ -12,13 +12,15 @@ char cGetNu(time_t tTime){
 }
 
 int main(void) {
-  time_t tTime = time(0);
+  register time_t tTime = time(0);
   register int iType;
   printf("Press any key to start: ");
-  getchar();
+  if (getchar() != '\n')
+    getchar();
   do {
+	system("cls");
     printf("\nReslut: %d\nPress ENTER to continue, or any key else to quit.\n",cGetNu(tTime++));
     iType = getchar();
-  } while(iType=='\n');
+  } while(iType == '\n');
   return 0;
 }
