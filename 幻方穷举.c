@@ -2,8 +2,9 @@
  *   License: Anti 996 (MIT-like)
  */
 #include <stdio.h>
-int main() {
-	int a[3][3],x[9],y[9],n=0;
+int main(void) {
+	int a[3][3],x[9],y[9];
+	register int n = 0;
 	for (x[0]=0; x[0]<3; x[0]++)
 		for (y[0]=0; y[0]<3; y[0]++)
 			for (x[1]=0; x[1]<3; x[1]++)
