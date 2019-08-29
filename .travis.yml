@@ -1,2 +1,3 @@
 language: c
+install: sudo apt-get upgrade && sudo apt-get update
 script: for a in `find . -name \*.c`; do gcc -Wall -Wextra -O3 -pipe $a; done
