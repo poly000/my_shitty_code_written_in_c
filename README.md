@@ -1,5 +1,7 @@
 # my_shitty_code_written_in_c
 
+[![build status image](https://travis-ci.org/poly000/my_shitty_code_written_in_c.svg?branch=master)](https://travis-ci.org/poly000/my_shitty_code_written_in_c)
+
 My shitty code in C.
 
 这是一个代码练习项目
