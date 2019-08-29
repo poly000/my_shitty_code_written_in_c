@@ -1,4 +1,0 @@
-language: c
-os: archlinux
-install: sudo apt-get install gcc -y
-script: for a in `find . -name \*.c`; do gcc -Wall -Wextra -O3 -pipe $a; done
