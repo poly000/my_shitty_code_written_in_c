@@ -1,9 +1,9 @@
 /*   Author: poly000
- *   License: Anti 996 (MIT-like)
+ *   License: WTFPL
  */
 #include <stdio.h>
-#define many 10000
-unsigned long long num_[many] = {2};
+#define many 1000000
+unsigned long long num_[many] = { [0]=2 };
 int main() {
 	FILE *fp = fopen("output.txt","w+");
 	if(fp == 0)
@@ -15,6 +15,7 @@ int main() {
 #elif many>1
 	fprintf(fp,"%10d",2);
 	register unsigned long long i=0,num=3,j=1,k=1;
+	setvbuf(fp,NULL,_IOFBF,many);
 	do {
 		while(i<j) {
 			if(num%num_[i] == 0)
@@ -33,6 +34,7 @@ int main() {
 		i = 0;
 		num += 2;
 	} while(j < many);
+	fflush(fp);
 	fclose(fp);
 	return 0;
 #endif

@@ -1,5 +1,5 @@
 /*   Author: poly000
- *   License: Anti 996 (MIT-like)
+ *   License: WTFPL
  */
 #include <stdio.h>
 int main(int argc, char **argv){
