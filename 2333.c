@@ -23,6 +23,7 @@ a:
 			r_iY = 0;
 			if (++r_iX == num_x) {
 				fprintf(stderr,"done.\n");
+				free(cpA);
 				getchar();
 				return 0;
 			}
