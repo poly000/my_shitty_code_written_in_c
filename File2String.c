@@ -1,4 +1,4 @@
-_Static_assert(sizeof(char) == 1,"It's not works!");
+_Static_assert(sizeof(char) == 1,"It\'s not works!"); //C11
 #include <stdio.h>
 #define BUF_SIZE 4096U
 inline static void help(char * name) {
