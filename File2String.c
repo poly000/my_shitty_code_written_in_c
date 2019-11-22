@@ -32,6 +32,8 @@ int main(int argc,char *argv[]) {
 			while (!feof(fpi)) {
 				static char ch[1];
 				fread((void *)ch,(size_t)1,(size_t)1,fpi);
+				if (feof(fpi))
+					break;
 				fprintf(fpo,"\\x");
 				static unsigned char num1,num2;
 				num1 = num2 = ch[0];
