@@ -26,13 +26,19 @@ int main(int argc,char *argv[]) {
 	if (fpi != NULL) {
 		register FILE * restrict fpo = fopen(argv[2],"a");
 		if (fpo != NULL) {
-			char buf[BUF_SIZE];
+			static char buf[BUF_SIZE];
 			setvbuf(fpo,buf,_IOFBF,BUF_SIZE);
 			fprintf(fpo,"\n#define %s \"",argv[3]);
 			while (!feof(fpi)) {
 				static char ch[1];
 				fread((void *)ch,(size_t)1,(size_t)1,fpi);
-				fprintf(fpo,"\\x%02hhx",ch[0]);
+				fprintf(fpo,"\\x");
+				static unsigned char num1,num2;
+				num1 = num2 = ch[0];
+				num2 >>= 4;
+				num2 &= 0xF;
+				num1 &= 0xF;
+				fprintf(fpo,"%x%x",num2,num1);
 			}
 			fprintf(fpo,"\"");
 			fclose(fpi);
