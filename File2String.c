@@ -3,7 +3,7 @@
  */
 _Static_assert(sizeof(char) == 1,"It\'s not works!"); //C11
 #include <stdio.h>
-#define BUF_SIZE 4096U
+#define BUF_SIZE 4096
 inline static void help(char * name) {
 	printf("Usage:\n"
           "%s [INPUTFILE] [ADDTOFILE] [NAME]\n"
@@ -30,7 +30,7 @@ int main(int argc,char *argv[]) {
 		register FILE * restrict fpo = fopen(argv[2],"a");
 		if (fpo != NULL) {
 			static char buf[BUF_SIZE];
-			setvbuf(fpo,buf,_IOFBF,BUF_SIZE);
+			setvbuf(fpo,buf,_IOFBF,(size_t)BUF_SIZE);
 			fprintf(fpo,"\n#define %s \"",argv[3]);
 			while (!feof(fpi)) {
 				static char ch[1];
