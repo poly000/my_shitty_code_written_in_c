@@ -37,13 +37,12 @@ int main(int argc,char *argv[]) {
 				fread((void *)ch,(size_t)1,(size_t)1,fpi);
 				if (feof(fpi))
 					break;
-				fprintf(fpo,"\\x");
-				static unsigned char num1,num2;
+				static register unsigned char num1,num2;
 				num1 = num2 = ch[0];
 				num2 >>= 4;
 				num2 &= 0xF;
 				num1 &= 0xF;
-				fprintf(fpo,"%x%x",num2,num1);
+				fprintf(fpo,"\\x%x%x",num2,num1);
 			}
 			fprintf(fpo,"\"");
 			fclose(fpi);
