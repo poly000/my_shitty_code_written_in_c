@@ -37,7 +37,7 @@ int main(int argc,char *argv[]) {
 				fread((void *)ch,(size_t)1,(size_t)1,fpi);
 				if (feof(fpi))
 					break;
-				static register unsigned char num1,num2;
+				register unsigned char num1,num2;
 				num1 = num2 = ch[0];
 				num2 >>= 4;
 				num2 &= 0xF;
