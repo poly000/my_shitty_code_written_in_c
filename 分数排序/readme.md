@@ -1,13 +1,9 @@
-Sorry but I can't speak English well.
-
-`data.txt` as:
+`data.txt` 应为
 ```
-how many people
-[name]
-[grace]
+人数
+名
+分数
 ...
 ```
 
-then build the `分数排序.c` and run
-
-you will get `output.txt` if lucky
+然后编译并运行 `分数排序.c` 
