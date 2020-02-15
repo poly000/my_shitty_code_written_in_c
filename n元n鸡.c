@@ -13,13 +13,11 @@ int main(){
 		fprintf(stderr,"%d is not able",num);
 		return 1;
 	}
-	n = (num/4-1)/7;
-a:
-	x = ++i*4;
-	y = (num-7*x)/4;
-	z = num-x-y;
-	fprintf(stdout,"%6d cock(s), %6d hen(s), %6d chick(s)\n",x,y,z);
-	if (i == n)
-		return 0;
-	goto a;
+	n = (num/4-1)/7;do {
+		x = ++i*4;
+		y = (num-7*x)/4;
+		z = num-x-y;
+		fprintf(stdout,"%6d cocks, %6d hens, %6d chicks\n",x,y,z);
+	} while(i != n);
+	return 0;
 }
