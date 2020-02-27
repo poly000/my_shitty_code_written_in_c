@@ -5,6 +5,7 @@
 int main(void) {
 	unsigned long long num0,num1,m,n,o;
 	fprintf(stderr,"Please type num1 & num2: ");
+	fflush(stdout);
 	scanf("%I64u%I64u",&num0,&num1);
 	if(num0 < num1) {
 		m = num0;
