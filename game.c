@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define max 100001 /* 10001 means max true number added 1 */
-#define max_wrong_times 30 /* make it as you need */
+#define maxp1 100001
+#define max_wrong_times 30
 int main() {
 	register unsigned long true_num,wronged_times;
 	unsigned long guest_num;
@@ -24,7 +24,7 @@ a:
 		return 0;
 b:
 	srand(time(0));
-	true_num = rand()%max;
+	true_num = rand()%maxp1;
 	wronged_times = 0;
 c:
 	fprintf(stderr,"Please type a number: ");
