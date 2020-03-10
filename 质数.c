@@ -2,9 +2,19 @@
  *   License: WTFPL
  */
 #include <stdio.h>
-#define many 1000000
+#define SHOW_TIME_USED
+#define many 100000
+
+#ifdef SHOW_TIME_USED
+#include <time.h>
+#endif
+
 unsigned long long num_[many] = { [0]=2 };
+
 int main() {
+#if defined(SHOW_TIME_USED)
+	register clock_t start = clock();
+#endif
 	FILE *fp = fopen("output.txt","w+");
 	if(fp == 0)
 		return 1;
@@ -36,6 +46,10 @@ int main() {
 	} while(j < many);
 	fflush(fp);
 	fclose(fp);
+#if defined(SHOW_TIME_USED)
+	start = clock()-start;
+	fprintf(stderr,"%lfms\n",(double)start * 1000.0 / (double)CLOCKS_PER_SEC);
+#endif
 	return 0;
 #endif
 }
