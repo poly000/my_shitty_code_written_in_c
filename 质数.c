@@ -3,7 +3,7 @@
  */
 #include <stdio.h>
 #define SHOW_TIME_USED
-#define many 100000
+#define many 10000
 
 #ifdef SHOW_TIME_USED
 #include <time.h>
@@ -48,7 +48,7 @@ int main() {
 	fclose(fp);
 #if defined(SHOW_TIME_USED)
 	start = clock()-start;
-	fprintf(stderr,"%lfms\n",(double)start * 1000.0 / (double)CLOCKS_PER_SEC);
+	fprintf(stderr,"%lfs\n",(double)start/ (double)CLOCKS_PER_SEC);
 #endif
 	return 0;
 #endif
