@@ -32,7 +32,7 @@ int main(int argc,char *argv[]) {
 			static char buf[BUF_SIZE];
 			setvbuf(fpo,buf,_IOFBF,(size_t)BUF_SIZE);
 			fprintf(fpo,"\n#define %s \"",argv[3]);
-			while (!feof(fpi)) {
+			while (1) {
 				static char ch[1];
 				fread((void *)ch,(size_t)1,(size_t)1,fpi);
 				if (feof(fpi))
