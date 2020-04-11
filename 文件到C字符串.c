@@ -1,7 +1,6 @@
 /*   Author: poly000
  *   License: WTFPL
  */
-// TODO: Fix the bug
 _Static_assert(sizeof(char) == 1,"It\'s not works!"); //C11
 #include <stdio.h>
 #define BUF_SIZE 4096
@@ -36,8 +35,9 @@ int main(int argc,char *argv[]) {
 			while (1) {
 				static char ch[4096];
 				register int n;
-				if (!(n = fread((void *)ch,(size_t)4096,(size_t)1,fpi))) {
+				if (!(n = fread((void *)ch,(size_t)1,(size_t)4096,fpi))) {
 					break;
+					printf("我很纯洁！\n");
 				}
 				for (register int i=0; i<n;i++) {
 					register unsigned char num1,num2;
