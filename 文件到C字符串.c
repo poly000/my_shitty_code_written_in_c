@@ -1,6 +1,7 @@
 /*   Author: poly000
  *   License: WTFPL
  */
+// TODO: Fix the bug
 _Static_assert(sizeof(char) == 1,"It\'s not works!"); //C11
 #include <stdio.h>
 #define BUF_SIZE 4096
