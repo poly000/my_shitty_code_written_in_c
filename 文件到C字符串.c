@@ -33,18 +33,21 @@ int main(int argc,char *argv[]) {
 			setvbuf(fpo,buf,_IOFBF,(size_t)BUF_SIZE);
 			fprintf(fpo,"\n#define %s \"",argv[3]);
 			while (1) {
-				static char ch[1];
-				fread((void *)ch,(size_t)1,(size_t)1,fpi);
-				if (feof(fpi))
+				static char ch[4096];
+				register int n;
+				if (!(n = fread((void *)ch,(size_t)4096,(size_t)1,fpi))) {
 					break;
-				register unsigned char num1,num2;
-				num1 = num2 = ch[0];
-				num2 >>= 4;
-				num2 &= 0xF;
-				num1 &= 0xF;
-				fprintf(fpo,"\\x%x%x",num2,num1);
+				}
+				for (register int i=0; i<n;i++) {
+					register unsigned char num1,num2;
+					num1 = num2 = ch[i];
+					num2 >>= 4;
+					num1 &= 0xF;
+					num2 &= 0xF;
+					fprintf(fpo,"\\x%x%x",num2,num1);
+				}
 			}
-			fprintf(fpo,"\"");
+			fprintf(fpo,"\"\n");
 			fclose(fpi);
 			fclose(fpo);
 			return 0;
