@@ -2,14 +2,16 @@
  *   License: WTFPL
  */
 #include <stdio.h>
+#include <inttypes.h>
+
 #define SHOW_TIME_USED
-#define many 10000
+#define many 100000
 
 #ifdef SHOW_TIME_USED
 #include <time.h>
 #endif
 
-unsigned long long num_[many] = { [0]=2 };
+uint64_t num_[many] = { [0]=2 };
 
 int main() {
 #if defined(SHOW_TIME_USED)
@@ -24,7 +26,7 @@ int main() {
 	return 0;
 #elif many>1
 	fprintf(fp,"%10d",2);
-	register unsigned long long i=0,num=3,j=1,k=1;
+	register uint64_t i=0,num=3,j=1,k=1;
 	setvbuf(fp,NULL,_IOFBF,many);
 	do {
 		while(i<j) {
@@ -36,10 +38,10 @@ int main() {
 			num_[i] = num;
 			j++;
 			if(++k == 10) {
-				fprintf(fp,"%10I64u\n",num);
+				fprintf(fp,"%10" PRIu64 "\n",num);
 				k = 0;
 			} else
-				fprintf(fp,"%10I64u",num);
+				fprintf(fp,"%10" PRIu64 " ",num);
 		}
 		i = 0;
 		num += 2;
