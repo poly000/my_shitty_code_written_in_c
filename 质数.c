@@ -3,7 +3,7 @@
  */
 #include <stdio.h>
 #include <inttypes.h>
-
+#include <stdbool.h>
 #define SHOW_TIME_USED
 #define many 100000
 
@@ -27,32 +27,35 @@ int main()
     return 0;
 #elif many>1
     fprintf(fp,"%10d",2);
-    register uint64_t i=0,num=3,j=1,k=1;
+    register uint64_t num=3,N=1,k=1;
     setvbuf(fp,NULL,_IOFBF,many);
-    do
     {
-        while(i<j)
-        {
-            if(num%num_[i] == 0)
-                break;
-            i++;
-        }
-        if(i == j)
-        {
-            num_[i] = num;
-            j++;
-            if(++k == 10)
-            {
-                fprintf(fp,"%10" PRIu64 "\n",num);
-                k = 0;
+        bool primer = true;
+        register uint32_t temp,temp1;
+        for (; N<many; num+=2) {
+            temp=num/3;
+            for (int i=0; (temp1=num_[i]) <= temp; i++) {
+                if (num%temp1 == 0) {
+                    primer = false;
+                    break;
+                }
             }
-            else
-                fprintf(fp,"%10" PRIu64 " ",num);
+            if (primer == true) {
+                num_[N] = num;
+                N++;
+                if(++k == 10)
+                {
+                    fprintf(fp,"%10" PRIu64 "\n",num);
+                    k = 0;
+                }
+                else
+                    fprintf(fp,"%10" PRIu64 " ",num);
+            }
+            primer=true;
         }
-        i = 0;
-        num += 2;
+
     }
-    while(j < many);
+
     fflush(fp);
     fclose(fp);
 #if defined(SHOW_TIME_USED)
