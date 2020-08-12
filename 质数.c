@@ -2,8 +2,7 @@
 #include <stdbool.h>
 #include <math.h>
 int main(void){
-    int n;
-    scanf("%d",&n);
+#define n 1000000
     int Primer[n];
     Primer[0] = 2;
     Primer[1] = 3;
