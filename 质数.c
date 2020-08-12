@@ -5,10 +5,9 @@ int main(void){
 #define n 1000000
     int Primer[n];
     Primer[0] = 2;
-    Primer[1] = 3;
-    for (int i=2,num = 5;i<n;num+=2) {
+    for (int i=1,num = 3;i<n;num+=2) {
         register bool isprimer = true;
-        for(int k=floor(sqrt(num)),j=1;Primer[j] <= k; j++) {
+        for(int k=floor(sqrt(num)),j=0;Primer[j] <= k; j++) {
             if(num%Primer[j]==0){
                 isprimer = false;
                 break;
