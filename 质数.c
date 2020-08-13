@@ -16,3 +16,5 @@ int main(void){
         if(isprimer) Primer[i++] = num;
     }
 }
+// 还是欧拉筛法好用
+// 回去试着写一下
