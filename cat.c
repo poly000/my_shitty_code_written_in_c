@@ -41,7 +41,7 @@ int main(int argc, char **argv)
         }
         for (int j=0; j<lFileSize; j++)
         {
-            putchar(*(*(i8Tmp+i)+j));
+            putchar(i8Tmp[i][j]);
         }
     }
     return 0;
