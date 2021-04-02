@@ -20,7 +20,7 @@ int main(int argc, char **argv)
     }
     int iNum = argc-1;
     long lFileSize;
-    int8_t **i8Tmp = (int8_t **)malloc(sizeof(int8_t *)*iNum);
+    uint8_t **i8Tmp = (uint8_t **)malloc(sizeof(uint8_t *)*iNum);
     FILE **fipFilp = (FILE **)malloc(sizeof(FILE *)*iNum);
     for (int i=0; i<iNum; i++)
     {
@@ -33,8 +33,8 @@ int main(int argc, char **argv)
         fseek(*(fipFilp+i),0L,2);
         lFileSize = ftell(*(fipFilp+i));
         rewind(*(fipFilp+i));
-        *(i8Tmp+i) = (int8_t *)malloc(sizeof(int8_t)*lFileSize);
-        fread((void *)*(i8Tmp+i),sizeof(int8_t),lFileSize,*(fipFilp+i));
+        *(i8Tmp+i) = (uint8_t *)malloc(sizeof(uint8_t)*lFileSize);
+        fread((void *)*(i8Tmp+i),sizeof(uint8_t),lFileSize,*(fipFilp+i));
         if(fclose(*(fipFilp+i)) != 0)
         {
             fprintf(stderr,"can't close file:\n%s\n",*(argv+i+1));
