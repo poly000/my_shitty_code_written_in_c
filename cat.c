@@ -18,11 +18,11 @@ int main(int argc, char **argv)
         }
         printf("Usage:\n %s [Image] [Archive] > [Outfile]\n %s [FILE]...\n",cp_Last,cp_Last);
     }
-    register int iNum = argc-1;
-    register long lFileSize;
-    register int8_t **i8Tmp = (int8_t **)malloc(sizeof(int8_t *)*iNum);
+    int iNum = argc-1;
+    long lFileSize;
+    int8_t **i8Tmp = (int8_t **)malloc(sizeof(int8_t *)*iNum);
     FILE **fipFilp = (FILE **)malloc(sizeof(FILE *)*iNum);
-    for (register int i=0; i<iNum; i++)
+    for (int i=0; i<iNum; i++)
     {
         *(fipFilp+i) = fopen(*(argv+i+1),"rb");
         if (*(fipFilp+i) == 0)
